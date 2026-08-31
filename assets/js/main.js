@@ -78,7 +78,10 @@
 
     buttons.forEach(function (btn) {
       var item = btn.closest(".faq__item");
-      var open = btn.getAttribute("aria-expanded") === "true";
+      // The markup ships every panel open, which is the correct no-JS state;
+      // the default-open item is marked, and JS collapses the rest.
+      var open = btn.hasAttribute("data-faq-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
       item.classList.toggle("is-open", open);
 
       btn.addEventListener("click", function () {
