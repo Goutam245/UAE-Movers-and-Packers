@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uaemoversandpacker.com/sitemap.xml
